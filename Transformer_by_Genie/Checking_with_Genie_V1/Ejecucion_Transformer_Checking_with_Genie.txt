@@ -1,0 +1,70 @@
+(TENSORFLOW_2025) PS C:\Users\gtoma\Downloads>  & 'c:\Users\gtoma\anaconda3\envs\TENSORFLOW_2025\python.exe' 'c:\Users\gtoma\.vscode\extensions\ms-python.debugpy-2025.8.0-win32-x64\bundled\libs\debugpy\launcher' '60797' '--' 'c:\Users\gtoma\Downloads\Checking_with_Genie.py' 
+2025-06-09 17:13:18.034167: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-06-09 17:13:18.970363: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Libraries imported successfully.
+Training samples: 25000
+Test samples: 25000
+Vocabulary size: 20000
+Max sequence length: 200
+WARNING:tensorflow:From c:\Users\gtoma\anaconda3\envs\TENSORFLOW_2025\lib\site-packages\keras\src\backend\tensorflow\core.py:232: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2025-06-09 17:13:25.003387: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Model: "functional_4"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ input_layer (InputLayer)             │ (None, 200)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ token_and_position_embedding         │ (None, 200, 128)            │       2,585,600 │
+│ (TokenAndPositionEmbedding)          │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ transformer_block (TransformerBlock) │ (None, 200, 128)            │         297,344 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ transformer_block_1                  │ (None, 200, 128)            │         297,344 │
+│ (TransformerBlock)                   │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ transformer_block_2                  │ (None, 200, 128)            │         297,344 │
+│ (TransformerBlock)                   │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ transformer_block_3                  │ (None, 200, 128)            │         297,344 │
+│ (TransformerBlock)                   │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ global_average_pooling1d             │ (None, 128)                 │               0 │
+│ (GlobalAveragePooling1D)             │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_12 (Dropout)                 │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_8 (Dense)                      │ (None, 20)                  │           2,580 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_13 (Dropout)                 │ (None, 20)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_9 (Dense)                      │ (None, 1)                   │              21 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 3,777,577 (14.41 MB)
+ Trainable params: 3,777,577 (14.41 MB)
+ Non-trainable params: 0 (0.00 B)
+Epoch 1/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 320s 126ms/step - accuracy: 0.5051 - loss: 0.7022 - val_accuracy: 0.4938 - val_loss: 0.6933
+Epoch 2/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 270s 105ms/step - accuracy: 0.4994 - loss: 0.6933 - val_accuracy: 0.4938 - val_loss: 0.6932
+Epoch 3/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 172s 69ms/step - accuracy: 0.4975 - loss: 0.6932 - val_accuracy: 0.4938 - val_loss: 0.6932
+Epoch 4/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 152s 61ms/step - accuracy: 0.5008 - loss: 0.6933 - val_accuracy: 0.4938 - val_loss: 0.6933
+Epoch 5/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 346s 138ms/step - accuracy: 0.5034 - loss: 0.6932 - val_accuracy: 0.5062 - val_loss: 0.6931
+Epoch 6/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 268s 107ms/step - accuracy: 0.5034 - loss: 0.6932 - val_accuracy: 0.4938 - val_loss: 0.6931
+Epoch 7/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 186s 74ms/step - accuracy: 0.4932 - loss: 0.6932 - val_accuracy: 0.4938 - val_loss: 0.6932
+Epoch 8/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 158s 63ms/step - accuracy: 0.5088 - loss: 0.6931 - val_accuracy: 0.5062 - val_loss: 0.6931
+Epoch 9/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 163s 65ms/step - accuracy: 0.5032 - loss: 0.6932 - val_accuracy: 0.4938 - val_loss: 0.6932
+Epoch 10/10
+2500/2500 ━━━━━━━━━━━━━━━━━━━━ 173s 69ms/step - accuracy: 0.5044 - loss: 0.6932 - val_accuracy: 0.4938 - val_loss: 0.6932
+782/782 ━━━━━━━━━━━━━━━━━━━━ 43s 55ms/step - accuracy: 0.4927 - loss: 0.6932  
+Test Loss: 0.6931571960449219
+Test Accuracy: 0.5
+(TENSORFLOW_2025) PS C:\Users\gtoma\Downloads> 
