@@ -1,0 +1,8 @@
+jax (tensorflow -> python==3.12.9):
+	conda install ipykernel langchain nltk opencv pandas py-xgboost scikit-learn statsmodels yellowbrick
+	pip install jax[cuda12] tensorflow
+	pip install datasets evaluate keras keras-hub keras-rs keras-tuner scikit-optimize transformers
+torch:
+	conda install ipykernel langchain nltk opencv pandas py-xgboost scikit-learn statsmodels yellowbrick
+	pip install torch torchaudio torchvision --index-url https://download.pytorch.org/whl/cu128
+	pip install datasets evaluate keras keras-hub keras-rs keras-tuner scikit-optimize transformers
